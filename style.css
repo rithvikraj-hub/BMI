@@ -1,0 +1,86 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#87CEEB,#e0e6d7);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:400px;
+    background:#fff;
+    padding:30px;
+    border:3px solid #333;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#7e2f51;
+}
+
+.input-group{
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+    color:#333;
+}
+
+input,
+select{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#28a745;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#218838;
+}
+
+#result{
+    margin-top:20px;
+    text-align:center;
+    padding:15px;
+    border:2px solid #ddd;
+    border-radius:8px;
+    background:#f8f9fa;
+}
+
+#bmi-value{
+    color:#007bff;
+    font-weight:bold;
+}
+
+#status{
+    margin-top:10px;
+    font-size:18px;
+    font-weight:bold;
+    color:#333;
+}

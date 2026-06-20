@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+<div class="container">
+    <h1>BMI Calculator</h1>
+
+    <label>Weight (kg):</label>
+    <input type="number" id="weight"><br><br>
+
+    <label>Height:</label>
+    <input type="number" id="height"><br><br>
+
+    <label>Unit:</label>
+    <select id="unit">
+        <option value="cm">Centimeters (cm)</option>
+        <option value="inch">Inches (in)</option>
+    </select><br><br>
+
+    <button onclick="calculateBMI()">Calculate BMI</button>
+
+    <h2>Your BMI: <span id="bmi-value">0</span></h2>
+    <p id="status"></p>
+
+    <script>
+        function calculateBMI() {
+
+            let weight = parseFloat(document.getElementById("weight").value);
+            let height = parseFloat(document.getElementById("height").value);
+            let unit = document.getElementById("unit").value;
+
+            if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+                alert("Please enter valid values.");
+                return;
+            }
+
+            let heightInMeters;
+
+            if (unit === "cm") {
+                heightInMeters = height / 100;
+            } else {
+                heightInMeters = height * 0.0254;
+            }
+
+            let bmi = weight / (heightInMeters * heightInMeters);
+
+            document.getElementById("bmi-value").innerText = bmi.toFixed(2);
+
+            let category = "";
+
+            if (bmi < 18.5) {
+                category = "Underweight";
+            } else if (bmi < 25) {
+                category = "Normal Weight";
+            } else if (bmi < 30) {
+                category = "Overweight";
+            } else {
+                category = "Obese";
+            }
+
+            document.getElementById("status").innerText =
+                "Category: " + category;
+        }
+    </script>
+
+</body>
+</html>
